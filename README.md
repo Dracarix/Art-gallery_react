@@ -1,1 +1,0 @@
-# Art-gallery_react
