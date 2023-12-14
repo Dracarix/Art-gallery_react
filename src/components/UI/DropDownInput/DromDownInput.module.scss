@@ -1,0 +1,58 @@
+@import '../../../styles/index.module.scss';
+.dropInput {
+  cursor: pointer;
+  width: 23%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  z-index: 2;
+  user-select: none;
+  background-color:var(--background-color) ;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.selectHeader {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  justify-content: space-between;
+}
+
+.additionalInputs {
+  display: flex;
+  height: 90px;
+  width: 100%;
+  justify-content: space-around;
+  position: absolute;
+  z-index: 1;
+  padding: auto;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  transform: translate(0, 58px);
+  border-width: 0px 2.3px 3px 2.5px;
+  border-style: solid;
+  background-color:var(--background-color) ;
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+.placeholderDropInp{
+  border: none;
+  & {
+    @extend .light;
+  }
+  
+  &.dark {
+    @extend .dark;
+  }
+}
+.additionalInputs input {
+  width: 30%;
+  height: 35px;
+  padding: 0 16px;
+  border-radius: 10px;
+  outline: none;
+}
+

@@ -1,0 +1,25 @@
+@import '../../../styles/Variables.scss';
+.page__wrapper {
+  margin-top: 40px;
+  display: flex;
+  margin-bottom: 90px;
+}
+.page {
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: all 0.1s;
+}
+.page__current {
+  border: 2px solid var(--border-color);
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+.page:not(.page__current, :disabled):hover {
+  background-color: var(--hover-page);
+}
+.page:disabled {
+  border: 1px solid $greys;
+  color: $greys;
+}

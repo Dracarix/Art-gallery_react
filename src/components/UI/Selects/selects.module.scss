@@ -1,0 +1,23 @@
+@import 'src/styles/Variables.scss';
+
+.selectsFliter {
+  width: 24%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  padding: 0 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.selectsFliter .optionfilter {
+  position: absolute;
+  transform: translate(0, -20px);
+  font-size: 14px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+select option:disabled {
+  display: none;
+}

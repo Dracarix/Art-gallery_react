@@ -1,0 +1,77 @@
+@import '../../../styles/Variables.scss';
+
+.ImgBoxed {
+  max-width: 360px;
+  max-height: 275px;
+  min-height: 230px;
+  flex: 1 0 25%;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  margin: 8px;
+  z-index: 1;
+  transition: all 0.2s ease-in-out;
+}
+.ArtSection{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 48px;
+}
+.ImgBoxed:hover .cartInfo{
+  transform: translate(0, -150px);
+  animation:hoverImg 0.2s ;
+}
+.ImgBoxed:not(:hover) .cartInfo {
+  transform: translate(0, 0);
+  animation: notHoverImg 0.2s ;
+}
+@keyframes notHoverImg {
+  from {
+    transform: translate(0, -150px);
+  }
+  to {
+    transform: translate(0, 0); 
+  }
+}
+@keyframes hoverImg{
+  from{
+    transform:translate(0,0);
+  }
+  to{
+    transform: translate(0, -150px);
+  }
+}
+.cartInfo{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.75);
+  z-index: 2;
+  transform:translate(0,0);
+  top: 90%;
+  width: 98%;
+  padding: 0 2%;
+  height: 100%;
+  color: $blacks;
+}
+h3{
+  margin: 0 0 12px 0;
+  font-size: 20px;
+  font-weight: 800;
+}
+span{
+  display: flex;
+  margin:0 0 5px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: $blacks;
+}
+p{
+  margin: 0;
+  font-weight: 300;
+}
+img {
+  width: 100%;
+  aspect-ratio: 2/1.5;
+  height: 100%;
+}
