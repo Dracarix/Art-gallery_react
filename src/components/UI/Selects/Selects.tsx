@@ -18,7 +18,7 @@ function Selects({
       value={value}
       title={defaultValue}
     >
-      <option disabled selected value="">
+      <option hidden value={defaultValue}>
         {defaultValue}
       </option>
       {options.map((option) => (

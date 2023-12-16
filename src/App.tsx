@@ -9,7 +9,7 @@ import { getPagesCount } from './utils/pages';
 import './styles/index.module.scss';
 import RenderPagination from './components/renderPagination';
 import RenderImages from './components/renderImages';
-import FilteredForm from './components/FilteredForm';
+import FilteredForm from './components/UI/form/FilteredForm';
 import MainHeader from './components/Header';
 
 function App() {

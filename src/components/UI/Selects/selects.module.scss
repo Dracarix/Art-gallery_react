@@ -18,6 +18,9 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
-select option:disabled {
-  display: none;
+@media (min-width: 0px) and (max-width: 680px) {
+  .selectsFliter{
+    width: 100%;
+    padding: 10px 0;
+  }
 }

@@ -1,7 +1,8 @@
 import React from 'react';
-import Inputs from './UI/Inputs/Inputs';
-import Selects from './UI/Selects/Selects';
-import DropInput, { SelectsDownInput } from './UI/DropDownInput/DromDownInput';
+import Inputs from '../Inputs/Inputs';
+import Selects from '../Selects/Selects';
+import DropInput, { SelectsDownInput } from '../DropDownInput/DromDownInput';
+import cl from './form.module.scss';
 
 interface OnChangeProps {
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
@@ -35,13 +36,7 @@ function FilteredForm({
 }: FilteredFormProps) {
   return (
     <form
-      action=""
-      style={{
-        display: 'flex',
-        gap: '20px',
-        width: '100%',
-        justifyContent: 'space-around',
-      }}
+      className={cl.formSect}
     >
       <Inputs
         placeholder="Name"

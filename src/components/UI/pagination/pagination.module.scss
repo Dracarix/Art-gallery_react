@@ -10,6 +10,9 @@
   color: var(--text-color);
   background-color: var(--background-color);
   transition: all 0.1s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .page__current {
   border: 2px solid var(--border-color);
