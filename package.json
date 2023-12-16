@@ -1,7 +1,7 @@
 {
   "name": "art-gallery",
   "version": "0.1.0",
-  "homepage": "https://dracarix.github.io/art-gallery_react",
+  "homepage": "https://dracarix.github.io/Art-gallery_react",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
