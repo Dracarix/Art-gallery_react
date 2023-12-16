@@ -35,9 +35,7 @@ function FilteredForm({
   handleAuthorChange,
 }: FilteredFormProps) {
   return (
-    <form
-      className={cl.formSect}
-    >
+    <form className={cl.formSect}>
       <Inputs
         placeholder="Name"
         type="text"

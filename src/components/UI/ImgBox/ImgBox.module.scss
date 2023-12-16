@@ -76,12 +76,12 @@ img {
   height: 100%;
 }
 @media (min-width: 680px) and (max-width: 1024px) {
-  .ImgBoxed{
+  .ImgBoxed {
     flex: 1 0 40%;
   }
 }
 @media (min-width: 0px) and (max-width: 680px) {
-  .ImgBoxed{
+  .ImgBoxed {
     flex: 1 0 100%;
   }
 }
