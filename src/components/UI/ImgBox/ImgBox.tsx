@@ -11,9 +11,8 @@ interface SelectImg {
     locationID: string;
   }>;
 }
-
 function ImgBox({ images }: SelectImg) {
-  const baseUrl = 'https://test-front.framework.team';
+  const baseUrl = 'https://test-front.framework.team/';
   return (
     <div className={cl.ArtSection}>
       {images.map((imag) => (
