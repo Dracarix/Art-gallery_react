@@ -1,6 +1,7 @@
-/* eslint-disable no-restricted-syntax */
 /* eslint-disable no-unsafe-optional-chaining */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectImages, imageLoaded, imageError } from '../../../store/art-load/ArtApi.slise';
 import cl from './ImgBox.module.scss';
 
 interface SelectImg {
@@ -16,26 +17,20 @@ interface SelectImg {
 
 function ImgBox({ images }: SelectImg) {
   const baseUrl = 'https://test-front.framework.team';
-  const [loadedImages, setLoadedImages] = useState<number[]>([]);
-  const [loadingAttempts, setLoadingAttempts] = useState<{ [key: number]: number }>({});
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [isLoading, setIsLoading] = useState(false);
+  const { loadedImages } = useSelector(selectImages);
+  const { loadingAttempts } = useSelector(selectImages);
+  const dispatch = useDispatch();
 
   const handleImageLoad = (value: number) => {
-    setLoadedImages((prevLoadedImages) => [...prevLoadedImages, value]);
+    dispatch(imageLoaded(value));
   };
 
-  const handleImageError = (value: number) => {
-    setLoadingAttempts((prevAttempts) => ({
-      ...prevAttempts,
-      [value]: (prevAttempts[value] || 0) + 1,
-    }));
+  const handleImageError = (value: any) => {
+    dispatch(imageError(value));
   };
 
   useEffect(() => {
     const loadImages = async () => {
-      setIsLoading(true);
-
       await Promise.all(
         Object.keys(loadingAttempts).map(async (value) => {
           const intValue = Number(value);
@@ -44,22 +39,24 @@ function ImgBox({ images }: SelectImg) {
 
             if (imgElement) {
               try {
-                await fetch(baseUrl + images.find((img) => img.value === intValue)?.imageUrl);
-                imgElement.src = baseUrl + images.find((img) => img.value === intValue)?.imageUrl;
+                await fetch(baseUrl + images.find((img: {
+                  value: number;
+                }) => img.value === intValue)?.imageUrl);
+                imgElement.src = baseUrl + images.find((img: {
+                  value: number;
+                }) => img.value === intValue)?.imageUrl;
                 handleImageLoad(intValue);
               } catch (error) {
-                // eslint-disable-next-line no-alert
+                // Обработка ошибки
               }
             }
           }
         }),
       );
-
-      setIsLoading(false);
     };
 
     loadImages();
-  }, [loadingAttempts, baseUrl, images, loadedImages]);
+  }, [dispatch, loadingAttempts, baseUrl, images, loadedImages]);
 
   return (
     <div className={cl.ArtSection}>
